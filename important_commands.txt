@@ -1,0 +1,38 @@
+gem install carrierwave
+gem install bootstrap-sass
+
+
+- Add into Gemfile
+
+bundle install
+
+
+- Create model and then migrate db
+
+rails g model Resume name:string attachment:string
+rake db:migrate
+
+
+- Create DB and grant permissions accordingly
+
+create database <name>;
+mysql> GRANT ALL PRIVILEGES ON <name>.*
+    -> to 'readitadmin'@'localhost'
+    -> IDENTIFIED BY 'password';
+
+
+- Create controller
+
+rails g controller Resumes index new create destroy
+
+
+- Create uploader
+
+rails g uploader attachment
+
+
+
+
+
+
+https://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
